@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/alu-web_react/static/css/main.a8266cdc.css",
+    "main.js": "/alu-web_react/static/js/main.094bfcd8.js",
+    "index.html": "/alu-web_react/index.html",
+    "main.a8266cdc.css.map": "/alu-web_react/static/css/main.a8266cdc.css.map",
+    "main.094bfcd8.js.map": "/alu-web_react/static/js/main.094bfcd8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a8266cdc.css",
+    "static/js/main.094bfcd8.js"
+  ]
+}
