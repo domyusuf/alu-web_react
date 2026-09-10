@@ -6,13 +6,13 @@ This repository contains my curriculum projects for the Front-End Web Developmen
 
 | Module | Description |
 | :--- | :--- |
-| **[Typescript](./Typescript)** | A comprehensive dive into TypeScript. Explores static typing, custom interfaces, class implementation, generic types, namespace declaration merging, and nominal typing strategies. |
-| **Webpack** *(Coming Soon)* | Configuration of entry points, output directories, loaders, plugins, code splitting, and development servers. |
-| **React** *(Coming Soon)* | Introduction to React, JSX syntax, testing, and application deployment. |
+| **[TypeScript](./TypeScript)** | A comprehensive dive into TypeScript. Explores static typing, custom interfaces, class implementation, generic types, namespace declaration merging, and nominal typing strategies. |
+| **[Webpack](./Webpack)** | A deep exploration into manually configuring Webpack. Covers compiling assets, configuring loaders (CSS, images, Babel), plugins, code splitting, chunk optimization, and hot-module replacement. |
+| **[React Intro](./react_intro)** | An introduction to the React ecosystem. Starts with `create-react-app` to build basic dashboard components and ends with manually wiring a custom React environment using Webpack, Babel, Jest, and Enzyme from scratch. |
 
 ## Technical Environment
 
 All code in this repository is written to be executed in a standard Node.js environment.
 - **OS**: Ubuntu 18.04 LTS (Tested and verified)
-- **Node**: Version 12.x+
+- **Node**: Version 12.x+ / 14.x+
 - **Styling**: Standard code formatting strictly enforced across all files, with a mandatory trailing newline.
