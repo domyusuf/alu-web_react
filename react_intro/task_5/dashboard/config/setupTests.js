@@ -1,10 +1,4 @@
-const { TextEncoder, TextDecoder } = require('util');
-const { ReadableStream } = require('node:stream/web');
-global.TextEncoder = TextEncoder;
-global.TextDecoder = TextDecoder;
-global.ReadableStream = ReadableStream;
-
-const { configure } = require('enzyme');
-const Adapter = require('@cfaester/enzyme-adapter-react-18');
+import { configure } from 'enzyme';
+import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 configure({ adapter: new Adapter() });
