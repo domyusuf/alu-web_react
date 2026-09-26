@@ -10,7 +10,7 @@ This repository contains my curriculum projects for the Front-End Web Developmen
 | **[Webpack](./Webpack)** | A deep exploration into manually configuring Webpack. Covers compiling assets, configuring loaders (CSS, images, Babel), plugins, code splitting, chunk optimization, and hot-module replacement. |
 | **[React Intro](./react_intro)** | An introduction to the React ecosystem. Starts with `create-react-app` to build basic dashboard components and ends with manually wiring a custom React environment using Webpack, Babel, Jest, and Enzyme from scratch. |
 | **[React Props](./react_props)** | Fundamentals of React props. Explores reusable components, prop passing, PropTypes, Fragments, and loop keys. |
-| **[React Component](./react_component)** | Deep dive into React components, lifecycle methods, Enzyme testing, Jest spies, Higher Order Components (HOCs), and Pure components. |
+| **[React Component](./React_component)** | Deep dive into React components, lifecycle methods, Enzyme testing, Jest spies, Higher Order Components (HOCs), and Pure components. |
 
 ## Technical Environment
 
