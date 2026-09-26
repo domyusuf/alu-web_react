@@ -9,6 +9,6 @@ describe('<Footer />', () => {
 
   it('renders the text "Copyright"', () => {
     const wrapper = shallow(<Footer />);
-    expect(wrapper.text()).toContain('Copyright');
+    expect(wrapper.text().includes('Copyright')).toBe(true);
   });
 });
