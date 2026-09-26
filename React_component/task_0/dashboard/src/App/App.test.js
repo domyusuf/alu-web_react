@@ -15,22 +15,22 @@ describe('<App />', () => {
 
   it('contains the Notifications component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.contains(<Notifications />)).toBe(true);
+    expect(wrapper.find(Notifications)).toHaveLength(1);
   });
 
   it('contains the Header component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.contains(<Header />)).toBe(true);
+    expect(wrapper.find(Header)).toHaveLength(1);
   });
 
   it('contains the Login component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.contains(<Login />)).toBe(true);
+    expect(wrapper.find(Login)).toHaveLength(1);
   });
 
   it('contains the Footer component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.contains(<Footer />)).toBe(true);
+    expect(wrapper.find(Footer)).toHaveLength(1);
   });
 
   it('checks CourseList is not displayed', () => {

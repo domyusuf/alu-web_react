@@ -20,17 +20,17 @@ describe('<App />', () => {
 
   it('contains the Header component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.contains(<Header />)).toBe(true);
+    expect(wrapper.find(Header)).toHaveLength(1);
   });
 
   it('contains the Login component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.contains(<Login />)).toBe(true);
+    expect(wrapper.find(Login)).toHaveLength(1);
   });
 
   it('contains the Footer component', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.contains(<Footer />)).toBe(true);
+    expect(wrapper.find(Footer)).toHaveLength(1);
   });
 
   it('checks CourseList is not displayed', () => {
@@ -53,17 +53,22 @@ describe('when isLoggedIn is true', () => {
 
 describe('when ctrl+h is pressed', () => {
   it('calls logOut function and alerts "Logging you out"', () => {
+    const events = {};
+    document.addEventListener = jest.fn((event, cb) => {
+      events[event] = cb;
+    });
+
     const logOutMock = jest.fn();
     const alertMock = jest.spyOn(window, 'alert').mockImplementation(() => {});
     
-    const wrapper = shallow(<App logOut={logOutMock} />);
+    shallow(<App logOut={logOutMock} />);
     
-    const event = new KeyboardEvent('keydown', { ctrlKey: true, key: 'h' });
-    document.dispatchEvent(event);
+    events.keydown({ ctrlKey: true, key: 'h' });
     
     expect(alertMock).toHaveBeenCalledWith('Logging you out');
     expect(logOutMock).toHaveBeenCalled();
     
     alertMock.mockRestore();
+    jest.restoreAllMocks();
   });
 });
