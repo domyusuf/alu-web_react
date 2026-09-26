@@ -10,7 +10,7 @@ import CourseList from '../CourseList/CourseList';
 describe('<App />', () => {
   it('renders without crashing', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.exists()).toBe(true);
+    expect(wrapper.exists()).toEqual(true);
   });
 
   it('contains the Notifications component', () => {

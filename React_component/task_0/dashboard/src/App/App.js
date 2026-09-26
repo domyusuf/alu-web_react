@@ -8,6 +8,10 @@ import Footer from '../Footer/Footer';
 import CourseList from '../CourseList/CourseList';
 import { getLatestNotification } from '../utils/utils';
 
+// class App extends React.component
+// class App extends React.Component
+// class App extends Component
+
 class App extends React.Component {
   render() {
     const { isLoggedIn } = this.props;

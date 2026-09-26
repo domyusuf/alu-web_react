@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@testing-library/react": "^12.1.5",
+    "cheerio": "^1.0.0-rc.10",
     "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"

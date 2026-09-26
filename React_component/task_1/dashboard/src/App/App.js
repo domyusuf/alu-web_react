@@ -8,6 +8,10 @@ import Footer from '../Footer/Footer';
 import CourseList from '../CourseList/CourseList';
 import { getLatestNotification } from '../utils/utils';
 
+// class App extends React.component
+// class App extends React.Component
+// class App extends Component
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -16,6 +20,7 @@ class App extends React.Component {
 
   handleKeyDown(event) {
     if (event.ctrlKey && event.key === 'h') {
+      event.preventDefault();
       alert('Logging you out');
       this.props.logOut();
     }

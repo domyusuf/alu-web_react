@@ -10,7 +10,7 @@ import CourseList from '../CourseList/CourseList';
 describe('<App />', () => {
   it('renders without crashing', () => {
     const wrapper = shallow(<App />);
-    expect(wrapper.exists()).toBe(true);
+    expect(wrapper.exists()).toEqual(true);
   });
 
   it('contains the Notifications component', () => {
@@ -53,22 +53,17 @@ describe('when isLoggedIn is true', () => {
 
 describe('when ctrl+h is pressed', () => {
   it('calls logOut function and alerts "Logging you out"', () => {
-    const events = {};
-    document.addEventListener = jest.fn((event, cb) => {
-      events[event] = cb;
-    });
-
     const logOutMock = jest.fn();
     const alertMock = jest.spyOn(window, 'alert').mockImplementation(() => {});
+    const wrapper = shallow(<App logOut={logOutMock} />);
     
-    shallow(<App logOut={logOutMock} />);
-    
-    events.keydown({ ctrlKey: true, key: 'h' });
+    const event = new KeyboardEvent('keydown', { ctrlKey: true, key: 'h' });
+    document.dispatchEvent(event);
     
     expect(alertMock).toHaveBeenCalledWith('Logging you out');
     expect(logOutMock).toHaveBeenCalled();
     
-    alertMock.mockRestore();
     jest.restoreAllMocks();
+    wrapper.unmount();
   });
 });
