@@ -6,27 +6,28 @@ import NotificationItem from './NotificationItem';
 describe('<Notifications />', () => {
   describe('Notifications rendering behavior', () => {
     it('renders without crashing', () => {
-      shallow(<Notifications />);
+      const wrapper = shallow(<Notifications />);
+      expect(wrapper.exists()).toBe(true);
     });
 
     it('menu item is being displayed when displayDrawer is false', () => {
       const wrapper = shallow(<Notifications displayDrawer={false} />);
-      expect(wrapper.find('.menuItem').length).toBe(1);
+      expect(wrapper.find('.menuItem')).toHaveLength(1);
     });
 
     it('div.Notifications is not being displayed when displayDrawer is false', () => {
       const wrapper = shallow(<Notifications displayDrawer={false} />);
-      expect(wrapper.find('.Notifications').length).toBe(0);
+      expect(wrapper.find('.Notifications')).toHaveLength(0);
     });
 
     it('menu item is being displayed when displayDrawer is true', () => {
       const wrapper = shallow(<Notifications displayDrawer={true} />);
-      expect(wrapper.find('.menuItem').length).toBe(1);
+      expect(wrapper.find('.menuItem')).toHaveLength(1);
     });
 
     it('div.Notifications is being displayed when displayDrawer is true', () => {
       const wrapper = shallow(<Notifications displayDrawer={true} />);
-      expect(wrapper.find('.Notifications').length).toBe(1);
+      expect(wrapper.find('.Notifications')).toHaveLength(1);
     });
   });
 
@@ -38,8 +39,8 @@ describe('<Notifications />', () => {
 
     it('renders correctly if you pass an empty array or if you don\'t pass the listNotifications property', () => {
       const noPropWrapper = shallow(<Notifications displayDrawer={true} />);
-      expect(noPropWrapper.find(NotificationItem).length).toBe(0);
-      expect(wrapper.find(NotificationItem).length).toBe(0);
+      expect(noPropWrapper.find(NotificationItem)).toHaveLength(0);
+      expect(wrapper.find(NotificationItem)).toHaveLength(0);
     });
 
     it('verify that when listNotifications is empty the message Here is the list of notifications is not displayed, but No new notification for now is', () => {
@@ -61,7 +62,7 @@ describe('<Notifications />', () => {
     });
 
     it('renders it correctly and with the right number of NotificationItem', () => {
-      expect(wrapper.find(NotificationItem).length).toBe(3);
+      expect(wrapper.find(NotificationItem)).toHaveLength(3);
     });
   });
 });

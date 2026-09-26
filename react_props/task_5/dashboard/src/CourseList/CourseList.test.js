@@ -6,15 +6,16 @@ import CourseListRow from './CourseListRow';
 describe('<CourseList />', () => {
   describe('With CourseList Empty', () => {
     it('renders CourseList component without crashing', () => {
-      shallow(<CourseList />);
+      const wrapper = shallow(<CourseList />);
+      expect(wrapper.exists()).toBe(true);
     });
 
     it('renders correctly if you pass an empty array or if you don\'t pass the listCourses property', () => {
       let wrapper = shallow(<CourseList />);
-      expect(wrapper.find(CourseListRow).length).toBe(3); // 2 header rows + 1 "No course available yet" row
+      expect(wrapper.find(CourseListRow)).toHaveLength(3);
 
       wrapper = shallow(<CourseList listCourses={[]} />);
-      expect(wrapper.find(CourseListRow).length).toBe(3);
+      expect(wrapper.find(CourseListRow)).toHaveLength(3);
     });
   });
 
@@ -26,7 +27,7 @@ describe('<CourseList />', () => {
         { id: 3, name: 'React', credit: 40 }
       ];
       const wrapper = shallow(<CourseList listCourses={courses} />);
-      expect(wrapper.find(CourseListRow).length).toBe(5); // 2 header rows + 3 course rows
+      expect(wrapper.find(CourseListRow)).toHaveLength(5);
     });
   });
 });
