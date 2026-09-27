@@ -52,8 +52,10 @@ class Notifications extends React.Component {
     const { displayDrawer, listNotifications } = this.props;
 
     return (
-      <React.Fragment>
-        <div className={`menuItem ${css(styles.menuItem)}`}>Your notifications</div>
+      <div className="NotificationsComponent">
+        <div className={css(styles.menuItem)} data-testid="notifications-menu">
+          Your notifications
+        </div>
         {displayDrawer && (
           <div className={css(styles.notifications)} data-testid="notifications-panel">
             <button
@@ -95,7 +97,7 @@ class Notifications extends React.Component {
             )}
           </div>
         )}
-      </React.Fragment>
+      </div>
     );
   }
 }

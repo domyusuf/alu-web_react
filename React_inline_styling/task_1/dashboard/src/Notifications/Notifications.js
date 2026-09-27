@@ -7,6 +7,9 @@ import NotificationItem from './NotificationItem';
 import NotificationItemShape from './NotificationItemShape';
 
 const styles = StyleSheet.create({
+  menuItem: {
+    textAlign: 'right'
+  },
   notifications: {
     border: '1px dashed #e0354b',
     padding: '10px',
@@ -32,8 +35,10 @@ class Notifications extends React.Component {
     const { displayDrawer, listNotifications } = this.props;
 
     return (
-      <React.Fragment>
-        <div className="menuItem">Your notifications</div>
+      <div className="NotificationsComponent">
+        <div className={css(styles.menuItem)} data-testid="notifications-menu">
+          Your notifications
+        </div>
         {displayDrawer && (
           <div className={css(styles.notifications)} data-testid="notifications-panel">
             <button
@@ -75,7 +80,7 @@ class Notifications extends React.Component {
             )}
           </div>
         )}
-      </React.Fragment>
+      </div>
     );
   }
 }

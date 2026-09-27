@@ -91,8 +91,11 @@ class Notifications extends React.Component {
     const { displayDrawer, listNotifications } = this.props;
 
     return (
-      <React.Fragment>
-        <div className={`menuItem ${css(styles.menuItem, displayDrawer && styles.menuItemHidden)}`}>
+      <div className="NotificationsComponent">
+        <div
+          className={css(styles.menuItem, displayDrawer && styles.menuItemHidden)}
+          data-testid="notifications-menu"
+        >
           Your notifications
         </div>
         {displayDrawer && (
@@ -136,7 +139,7 @@ class Notifications extends React.Component {
             )}
           </div>
         )}
-      </React.Fragment>
+      </div>
     );
   }
 }
