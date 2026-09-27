@@ -8,9 +8,34 @@ import NotificationItemShape from './NotificationItemShape';
 
 const styles = StyleSheet.create({
   notifications: {
-    border: '1px dashed #e0354b',
-    padding: '10px',
+    border: '2px dashed #FF0000',
+    padding: '24px',
     position: 'relative'
+  },
+  notificationsList: {
+    listStyleType: 'disc',
+    paddingLeft: '20px'
+  },
+  menuItem: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    margin: '10px',
+    cursor: 'pointer'
+  },
+  button: {
+    float: 'right',
+    height: '25px',
+    width: '25px',
+    position: 'absolute',
+    top: '16px',
+    right: '16px',
+    background: 'none',
+    border: 'none'
+  },
+  buttonImg: {
+    height: '20px',
+    width: '20px'
   }
 });
 
@@ -33,25 +58,17 @@ class Notifications extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="menuItem">Your notifications</div>
+        <div className={css(styles.menuItem)} data-testid="notifications-menu">
+          Your notifications
+        </div>
         {displayDrawer && (
           <div className={css(styles.notifications)} data-testid="notifications-panel">
             <button
-              style={{
-                color: '#3a3a3a',
-                fontWeight: 'bold',
-                background: 'none',
-                border: 'none',
-                fontSize: '15px',
-                position: 'absolute',
-                right: '2px',
-                top: '2px',
-                cursor: 'pointer',
-              }}
+              className={css(styles.button)}
               aria-label="Close"
               onClick={() => console.log('Close button has been clicked')}
             >
-              <img src={closeIcon} alt="close-icon" width="10px" />
+              <img className={css(styles.buttonImg)} src={closeIcon} alt="close-icon" />
             </button>
 
             {listNotifications.length === 0 ? (
@@ -59,7 +76,7 @@ class Notifications extends React.Component {
             ) : (
               <React.Fragment>
                 <p>Here is the list of notifications</p>
-                <ul>
+                <ul className={css(styles.notificationsList)}>
                   {listNotifications.map(notification => (
                     <NotificationItem
                       key={notification.id}
