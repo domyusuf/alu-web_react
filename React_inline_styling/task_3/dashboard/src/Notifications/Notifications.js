@@ -55,7 +55,7 @@ class Notifications extends React.Component {
       <React.Fragment>
         <div className={`menuItem ${css(styles.menuItem)}`}>Your notifications</div>
         {displayDrawer && (
-          <div className={`Notifications ${css(styles.notifications)}`}>
+          <div className={css(styles.notifications)} data-testid="notifications-panel">
             <button
               style={{
                 color: '#3a3a3a',

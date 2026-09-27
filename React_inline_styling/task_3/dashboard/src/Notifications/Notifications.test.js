@@ -17,7 +17,7 @@ describe('<Notifications />', () => {
 
     it('div.Notifications is not being displayed when displayDrawer is false', () => {
       const wrapper = shallow(<Notifications displayDrawer={false} />);
-      expect(wrapper.find('.Notifications')).toHaveLength(0);
+      expect(wrapper.find('[data-testid="notifications-panel"]')).toHaveLength(0);
     });
 
     it('menu item is being displayed when displayDrawer is true', () => {
@@ -27,7 +27,7 @@ describe('<Notifications />', () => {
 
     it('div.Notifications is being displayed when displayDrawer is true', () => {
       const wrapper = shallow(<Notifications displayDrawer={true} />);
-      expect(wrapper.find('.Notifications')).toHaveLength(1);
+      expect(wrapper.find('[data-testid="notifications-panel"]')).toHaveLength(1);
     });
   });
 

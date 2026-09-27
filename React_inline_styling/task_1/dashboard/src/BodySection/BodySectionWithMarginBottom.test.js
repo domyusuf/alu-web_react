@@ -1,7 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { StyleSheetTestUtils } from 'aphrodite';
 import BodySection from './BodySection';
 import BodySectionWithMarginBottom from './BodySectionWithMarginBottom';
+
+StyleSheetTestUtils.suppressStyleInjection();
 
 describe('<BodySectionWithMarginBottom />', () => {
   it('renders BodySection and passes all props to it', () => {

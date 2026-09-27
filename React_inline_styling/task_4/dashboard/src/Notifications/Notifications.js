@@ -96,7 +96,7 @@ class Notifications extends React.Component {
           Your notifications
         </div>
         {displayDrawer && (
-          <div className={`Notifications ${css(styles.notifications)}`}>
+          <div className={css(styles.notifications)} data-testid="notifications-panel">
             <button
               style={{
                 color: '#3a3a3a',
