@@ -19,7 +19,7 @@ test('all immutable exercises behave as required', () => {
   expect(addElementToList(list, 'b').toJS()).toEqual(['a', 'b']);
   expect(list.toJS()).toEqual(['a']);
   expect(map.get('2')).toBe('Noah');
-  expect(map2.get('2')).toBe('Benjamin');
+  expect(map2.get(2)).toBe('Benjamin');
   expect(concatElements([1], [2]).toJS()).toEqual([1, 2]);
   expect(mergeElements({ a: 1 }, { a: 2, b: 3 }).toJS()).toEqual({ a: 2, b: 3 });
   expect(mergeDeeplyElements({ u: { likes: { 1: true } } }, { u: { likes: { 2: true } } }).toJS())
